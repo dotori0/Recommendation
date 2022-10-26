@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recommendation Web</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script>
+    function getData() {
+      var res = ''
+      for (var i = 1; i <= 14; i++) {
+        var q = document.getElementsByName('q' + i);
+        var val = 0
+        for (var j of q) {
+          if (j.checked) {
+            val = Number(j.value);
+          }
+        }
+        if (val == 0) {
+          alert('모든 문항에 답해 주세요.');
+          throw ('[radio not checked]');
+        }
+        res += String(val);
+      }
+      return res
+    }
+
+    function go() {
+      var data = getData();
+      location.href = './' + data;
+    }
+  </script>
+</head>
+
+<body>
+  <nav class="navbar bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        삼성고 과목 추천 페이지
+      </a>
+    </div>
+  </nav>
+  <div class="container text-center">
+    <div class="card text-bg-primary mb-3" style="margin-top: 50px;">
+      <div class="card-body">
+        긍정적인 대답이면 5에 가까운 수를, 부정적인 대답이면 1에 가까운 수를 누르세요.
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <div class="container text-center">
+    <div class="col-md-12">
+      <div class="swiper" style="margin-top: 50px;">
+        <!-- Additional required wrapper -->
+        <div class=" swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="card text-center" style="margin-top: 50px;">
+              <div class="card-header">
+                첫 번째 질문
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" style="margin-bottom: 20px;">카톡이 오면 바로 보나요?</h5>
+
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                  style="margin-bottom: 30px;">
+                  <input type="radio" class="btn-check" name="q1" id="q1_1" value="1" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q1_1">1</label>
+
+                  <input type="radio" class="btn-check" name="q1" id="q1_2" value="2" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q1_2">2</label>
+
+                  <input type="radio" class="btn-check" name="q1" id="q1_3" value="3" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q1_3">3</label>
+                  <input type="radio" class="btn-check" name="q1" id="q1_4" value="4" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q1_4">4</label>
+                  <input type="radio" class="btn-check" name="q1" id="q1_5" value="5" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q1_5">5</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card text-center" style="margin-top: 50px;">
+              <div class="card-header">
+                두 번째 질문
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" style="margin-bottom: 20px;">항상 새로운 것에 도전하는 것을 좋아하나요?</h5>
+
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                  style="margin-bottom: 30px;">
+                  <input type="radio" class="btn-check" name="q2" id="q2_1" value="1" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q2_1">1</label>
+
+                  <input type="radio" class="btn-check" name="q2" id="q2_2" value="2" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q2_2">2</label>
+
+                  <input type="radio" class="btn-check" name="q2" id="q2_3" value="3" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q2_3">3</label>
+                  <input type="radio" class="btn-check" name="q2" id="q2_4" value="4" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q2_4">4</label>
+                  <input type="radio" class="btn-check" name="q2" id="q2_5" value="5" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q2_5">5</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card text-center" style="margin-top: 50px;">
+              <div class="card-header">
+                세 번째 질문
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" style="margin-bottom: 20px;">동물이나 식물을 기르면 행복한가요?</h5>
+
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                  style="margin-bottom: 30px;">
+                  <input type="radio" class="btn-check" name="q3" id="q3_1" value="1" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q3_1">1</label>
+
+                  <input type="radio" class="btn-check" name="q3" id="q3_2" value="2" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q3_2">2</label>
+
+                  <input type="radio" class="btn-check" name="q3" id="q3_3" value="3" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q3_3">3</label>
+                  <input type="radio" class="btn-check" name="q3" id="q3_4" value="4" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q3_4">4</label>
+                  <input type="radio" class="btn-check" name="q3" id="q3_5" value="5" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q3_5">5</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card text-center" style="margin-top: 50px;">
+              <div class="card-header">
+                네 번째 질문
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" style="margin-bottom: 20px;">실험도구를 올바르게 사용할 수 있나요?</h5>
+
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                  style="margin-bottom: 30px;">
+                  <input type="radio" class="btn-check" name="q4" id="q4_1" value="1" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q4_1">1</label>
+
+                  <input type="radio" class="btn-check" name="q4" id="q4_2" value="2" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q4_2">2</label>
+
+                  <input type="radio" class="btn-check" name="q4" id="q4_3" value="3" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q4_3">3</label>
+                  <input type="radio" class="btn-check" name="q4" id="q4_4" value="4" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q4_4">4</label>
+                  <input type="radio" class="btn-check" name="q4" id="q4_5" value="5" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q4_5">5</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card text-center" style="margin-top: 50px;">
+              <div class="card-header">
+                다섯 번째 질문
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" style="margin-bottom: 20px;">LiFe를 보고 리튬, 철로 생각한 적이 있나요?</h5>
+
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                  style="margin-bottom: 30px;">
+                  <input type="radio" class="btn-check" name="q5" id="q5_1" value="1" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q5_1">1</label>
+
+                  <input type="radio" class="btn-check" name="q5" id="q5_2" value="2" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q5_2">2</label>
+
+                  <input type="radio" class="btn-check" name="q5" id="q5_3" value="3" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q5_3">3</label>
+                  <input type="radio" class="btn-check" name="q5" id="q5_4" value="4" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q5_4">4</label>
+                  <input type="radio" class="btn-check" name="q5" id="q5_5" value="5" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q5_5">5</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card text-center" style="margin-top: 50px;">
+              <div class="card-header">
+                여섯 번째 질문
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" style="margin-bottom: 20px;">기계를 보고 개선하면 좋은 사항을 생각해 본 적이 있나요?</h5>
+
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                  style="margin-bottom: 30px;">
+                  <input type="radio" class="btn-check" name="q6" id="q6_1" value="1" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q6_1">1</label>
+                  <input type="radio" class="btn-check" name="q6" id="q6_2" value="2" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q6_2">2</label>
+                  <input type="radio" class="btn-check" name="q6" id="q6_3" value="3" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q6_3">3</label>
+                  <input type="radio" class="btn-check" name="q6" id="q6_4" value="4" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q6_4">4</label>
+                  <input type="radio" class="btn-check" name="q6" id="q6_5" value="5" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q6_5">5</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card text-center" style="margin-top: 50px;">
+              <div class="card-header">
+                일곱 번째 질문
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" style="margin-bottom: 20px;">사진을 보고 아름답다고 느껴지나요?</h5>
+
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                  style="margin-bottom: 30px;">
+                  <input type="radio" class="btn-check" name="q7" id="q7_1" value="1" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q7_1">1</label>
+                  <input type="radio" class="btn-check" name="q7" id="q7_2" value="2" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q7_2">2</label>
+                  <input type="radio" class="btn-check" name="q7" id="q7_3" value="3" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q7_3">3</label>
+                  <input type="radio" class="btn-check" name="q7" id="q7_4" value="4" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q7_4">4</label>
+                  <input type="radio" class="btn-check" name="q7" id="q7_5" value="5" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q7_5">5</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card text-center" style="margin-top: 50px;">
+              <div class="card-header">
+                여덟 번째 질문
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" style="margin-bottom: 20px;">어렸을 때에 곤충 관련 해부를 진행해 본 적이 있나요?</h5>
+
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                  style="margin-bottom: 30px;">
+                  <input type="radio" class="btn-check" name="q8" id="q8_1" value="1" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q8_1">1</label>
+                  <input type="radio" class="btn-check" name="q8" id="q8_2" value="2" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q8_2">2</label>
+                  <input type="radio" class="btn-check" name="q8" id="q8_3" value="3" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q8_3">3</label>
+                  <input type="radio" class="btn-check" name="q8" id="q8_4" value="4" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q8_4">4</label>
+                  <input type="radio" class="btn-check" name="q8" id="q8_5" value="5" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q8_5">5</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card text-center" style="margin-top: 50px;">
+              <div class="card-header">
+                아홉 번째 질문
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" style="margin-bottom: 20px;">경쟁심이 강한 편인가요?</h5>
+
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                  style="margin-bottom: 30px;">
+                  <input type="radio" class="btn-check" name="q9" id="q9_1" value="1" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q9_1">1</label>
+                  <input type="radio" class="btn-check" name="q9" id="q9_2" value="2" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q9_2">2</label>
+                  <input type="radio" class="btn-check" name="q9" id="q9_3" value="3" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q9_3">3</label>
+                  <input type="radio" class="btn-check" name="q9" id="q9_4" value="4" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q9_4">4</label>
+                  <input type="radio" class="btn-check" name="q9" id="q9_5" value="5" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q9_5">5</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card text-center" style="margin-top: 50px;">
+              <div class="card-header">
+                열 번째 질문
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" style="margin-bottom: 20px;">요리할 때 비율을 맞추는 것을 잘하나요?</h5>
+
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                  style="margin-bottom: 30px;">
+                  <input type="radio" class="btn-check" name="q10" id="q10_1" value="1" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q10_1">1</label>
+                  <input type="radio" class="btn-check" name="q10" id="q10_2" value="2" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q10_2">2</label>
+                  <input type="radio" class="btn-check" name="q10" id="q10_3" value="3" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q10_3">3</label>
+                  <input type="radio" class="btn-check" name="q10" id="q10_4" value="4" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q10_4">4</label>
+                  <input type="radio" class="btn-check" name="q10" id="q10_5" value="5" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q10_5">5</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card text-center" style="margin-top: 50px;">
+              <div class="card-header">
+                열한 번째 질문
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" style="margin-bottom: 20px;">게임을 할 때 아이템, 스킬 조합 등을 직접 연구하며 하나요?</h5>
+
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                  style="margin-bottom: 30px;">
+                  <input type="radio" class="btn-check" name="q11" id="q11_1" value="1" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q11_1">1</label>
+                  <input type="radio" class="btn-check" name="q11" id="q11_2" value="2" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q11_2">2</label>
+                  <input type="radio" class="btn-check" name="q11" id="q11_3" value="3" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q11_3">3</label>
+                  <input type="radio" class="btn-check" name="q11" id="q11_4" value="4" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q11_4">4</label>
+                  <input type="radio" class="btn-check" name="q11" id="q11_5" value="5" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q11_5">5</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card text-center" style="margin-top: 50px;">
+              <div class="card-header">
+                열두 번째 질문
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" style="margin-bottom: 20px;">배운 것을 응용하고 직접 만드는 것을 좋아하나요?</h5>
+
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                  style="margin-bottom: 30px;">
+                  <input type="radio" class="btn-check" name="q12" id="q12_1" value="1" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q12_1">1</label>
+                  <input type="radio" class="btn-check" name="q12" id="q12_2" value="2" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q12_2">2</label>
+                  <input type="radio" class="btn-check" name="q12" id="q12_3" value="3" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q12_3">3</label>
+                  <input type="radio" class="btn-check" name="q12" id="q12_4" value="4" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q12_4">4</label>
+                  <input type="radio" class="btn-check" name="q12" id="q12_5" value="5" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q12_5">5</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card text-center" style="margin-top: 50px;">
+              <div class="card-header">
+                열세 번째 질문
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" style="margin-bottom: 20px;">책, 논문, 인터넷에서 본 것을 100% 믿을 수는 없다고 생각하나요?</h5>
+
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                  style="margin-bottom: 30px;">
+                  <input type="radio" class="btn-check" name="q13" id="q13_1" value="1" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q13_1">1</label>
+                  <input type="radio" class="btn-check" name="q13" id="q13_2" value="2" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q13_2">2</label>
+                  <input type="radio" class="btn-check" name="q13" id="q13_3" value="3" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q13_3">3</label>
+                  <input type="radio" class="btn-check" name="q13" id="q13_4" value="4" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q13_4">4</label>
+                  <input type="radio" class="btn-check" name="q13" id="q13_5" value="5" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q13_5">5</label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card text-center" style="margin-top: 50px;">
+              <div class="card-header">
+                열네 번째 질문
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" style="margin-bottom: 20px;">나의 몸이 어떻게 작용하는지 궁금한가요?</h5>
+
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"
+                  style="margin-bottom: 10px;">
+                  <input type="radio" class="btn-check" name="q14" id="q14_1" value="1" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q14_1">1</label>
+                  <input type="radio" class="btn-check" name="q14" id="q14_2" value="2" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q14_2">2</label>
+                  <input type="radio" class="btn-check" name="q14" id="q14_3" value="3" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q14_3">3</label>
+                  <input type="radio" class="btn-check" name="q14" id="q14_4" value="4" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q14_4">4</label>
+                  <input type="radio" class="btn-check" name="q14" id="q14_5" value="5" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="q14_5">5</label>
+                </div>
+              </div>
+              <div class="container text-center" style="margin-bottom: 20px;"><button class="btn btn-primary"
+                  onclick="go()">제출</button></div>
+            </div>
+
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='js/slideShow.js') }}"></script>
+</body>
+
+</html>
