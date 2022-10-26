@@ -31,4 +31,4 @@ def result(user_vector):
   return render_template('result.html', subject=subject)
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  app.run(host='0.0.0.0', debug=False)
