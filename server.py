@@ -8,7 +8,7 @@ from flask import Flask, jsonify, render_template
 
 create_item_matrix()
 
-f = open('data/item_index.csv', 'rt')
+f = open('data/item_index.csv', 'rt', encoding="cp949")
 index = next(csv.reader(f))
 
 with open('data/item_matrix.csv', 'r', encoding='utf-8-sig') as f:
